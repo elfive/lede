@@ -44,13 +44,6 @@ jobs:
 
           df -h
 
-      - name: added serverchan
-        run: |
-          cd package
-          mkdir -p openwrt-packages
-          cd openwrt-packages
-          git clone https://github.com/elfive1992/luci-app-serverchan.git
-
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
@@ -58,7 +51,10 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: make defconfig
+        run: |
+          make defconfig
+          sed -i 's/# CONFIG_ALL .*/CONFIG_ALL=y/' .config
+          make defconfig
 
       - name: Make download
         run: |
