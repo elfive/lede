@@ -83,7 +83,6 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-rclone_INCLUDE_fuse-utils=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-samba=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-samba4=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-statistics=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-transmission=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-uhttpd=y' >> .config
