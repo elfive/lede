@@ -59,13 +59,16 @@ jobs:
           echo 'CONFIG_GRUB_TITLE="LEDE"' >> .config
           echo 'CONFIG_TARGET_KERNEL_PARTSIZE=128' >> .config
           echo 'CONFIG_TARGET_ROOTFS_PARTSIZE=1024' >> .config
+          echo 'CONFIG_PACKAGE_docker-ce=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-lib-docker=y' >> .config
+          echo 'CONFIG_PACKAGE_docker-compose=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-app-docker=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-adbyby-plus=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-aria2=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-cifs-mount=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-cifsd=m' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ddns=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-docker=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-minidlna=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-mwan3=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-mwan3helper=y' >> .config
