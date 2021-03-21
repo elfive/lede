@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate configuration file
         run: |
-          echo 'CONFIG_ALL=y' > .config
+          echo 'CONFIG_ALL=m' > .config
           echo 'CONFIG_TARGET_x86=y' >> .config
           echo 'CONFIG_TARGET_x86_64=y' >> .config
           echo 'CONFIG_GRUB_TITLE="LEDE"' >> .config
