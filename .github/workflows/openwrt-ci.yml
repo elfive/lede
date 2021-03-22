@@ -75,8 +75,6 @@ jobs:
           echo 'CONFIG_RSYNC_zlib=y' >> .config
           echo 'CONFIG_PACKAGE_rsyncd=y' >> .config
           echo 'CONFIG_PACKAGE_vsftpd=y' >> .config
-          echo 'CONFIG_VSFTPD_USE_UCI_SCRIPTS=y' >> .config
-          echo 'CONFIG_PACKAGE_vsftpd-tls=y' >> .config
           echo 'CONFIG_PACKAGE_wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_kmod-wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wireguard=y' >> .config
