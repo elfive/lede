@@ -59,6 +59,23 @@ jobs:
           echo 'CONFIG_GRUB_TITLE="LEDE"' >> .config
           echo 'CONFIG_TARGET_KERNEL_PARTSIZE=128' >> .config
           echo 'CONFIG_TARGET_ROOTFS_PARTSIZE=1024' >> .config
+          echo 'CONFIG_DEFAULT_dnsmasq-full=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq-dhcpv6=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq-full=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_dhcp=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_dnssec=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_auth=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_ipset=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_noid=y' >> .config
+          echo 'CONFIG_PACKAGE_dnsmasq_full_tftp=y' >> .config
+          echo 'CONFIG_PACKAGE_ipv6helper=y' >> .config
+          echo 'CONFIG_PACKAGE_kmod-usb2=y' >> .config
+          echo 'CONFIG_PACKAGE_kmod-usb2-pci=y' >> .config
+          echo 'CONFIG_PACKAGE_kmod-usb3=y' >> .config
+          echo 'CONFIG_PACKAGE_kmod-kvm-intel=y' >> .config
+          echo 'CONFIG_PACKAGE_kmod-kvm-x86=y' >> .config
           echo 'CONFIG_PACKAGE_docker-ce=y' >> .config
           echo 'CONFIG_DOCKER_KERNEL_OPTIONS=y' >> .config
           echo 'CONFIG_DOCKER_SECCOMP=y' >> .config
@@ -119,13 +136,6 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-proto-qmi=y' >> .config
           echo 'CONFIG_PACKAGE_luci-proto-wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-adblock=y' >> .config
           make defconfig
 
       - name: Make download
@@ -149,11 +159,13 @@ jobs:
         run: |
           mkdir -p ./artifact/firmware
           mkdir -p ./artifact/package
+          mkdir -p ./artifact/target-packages
           mkdir -p ./artifact/buildinfo
-          rm -rf $(find ./bin/targets/ -type d -name "packages")
+          cp -rf $(find ./bin/targets/ -type f -name "*.ipk") ./artifact/target-packages/
           cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
+          cp .config ./artifact/buildinfo/
 
       - name: Deliver buildinfo
         uses: actions/upload-artifact@v2
