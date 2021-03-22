@@ -75,7 +75,6 @@ jobs:
           echo 'CONFIG_RSYNC_zlib=y' >> .config
           echo 'CONFIG_PACKAGE_rsyncd=y' >> .config
           echo 'CONFIG_PACKAGE_vsftpd=y' >> .config
-          echo 'CONFIG_PACKAGE_vsftpd-alt=y' >> .config
           echo 'CONFIG_VSFTPD_USE_UCI_SCRIPTS=y' >> .config
           echo 'CONFIG_PACKAGE_vsftpd-tls=y' >> .config
           echo 'CONFIG_PACKAGE_wireguard=y' >> .config
@@ -87,7 +86,6 @@ jobs:
           echo 'CONFIG_PACKAGE_pptpd=y' >> .config
           echo 'CONFIG_PACKAGE_cifsmount=y' >> .config
           echo 'CONFIG_PACKAGE_iperf3=y' >> .config
-          echo 'CONFIG_PACKAGE_iperf3-ssl=y' >> .config
           echo 'CONFIG_PACKAGE_iputils-ping=y' >> .config
           echo 'CONFIG_PACKAGE_iputils-ping6=y' >> .config
           echo 'CONFIG_PACKAGE_iputils-traceroute6=y' >> .config
