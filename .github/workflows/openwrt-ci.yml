@@ -142,7 +142,6 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-upnp=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-usb-printer=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-uugamebooster=y' >> .config
-          echo 'CONFIG_PACKAGE_luci-app-vsftpd=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
           echo 'CONFIG_PACKAGE_luci-i18n-wrtbwmon-zh-cn=y' >> .config
