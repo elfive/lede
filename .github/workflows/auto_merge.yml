@@ -1,4 +1,4 @@
-name: auto_merge
+name: Automatic-Merge
 
 on:
   workflow_dispatch:
