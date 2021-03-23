@@ -45,6 +45,11 @@ jobs:
 
           df -h
 
+      - name: Add 3rdParty Packages
+        run: |
+          mkdir -p ./package/lean/luci-app-serverchan
+          git clone https://github.com/tty228/luci-app-serverchan.git ./package/lean/luci-app-serverchan
+
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
@@ -134,6 +139,7 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-rclone_INCLUDE_fuse-utils=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-samba=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-softethervpn=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-statistics=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-transmission=y' >> .config
