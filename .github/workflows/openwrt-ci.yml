@@ -74,7 +74,6 @@ jobs:
           echo 'CONFIG_RSYNC_acl=y' >> .config
           echo 'CONFIG_RSYNC_zlib=y' >> .config
           echo 'CONFIG_PACKAGE_rsyncd=y' >> .config
-          echo 'CONFIG_PACKAGE_vsftpd-tls=y' >> .config
           echo 'CONFIG_PACKAGE_wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_kmod-wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wireguard=y' >> .config
@@ -142,6 +141,7 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-upnp=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-usb-printer=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-uugamebooster=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-app-vsftpd=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wireguard=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-wrtbwmon=y' >> .config
           echo 'CONFIG_PACKAGE_luci-i18n-wrtbwmon-zh-cn=y' >> .config
