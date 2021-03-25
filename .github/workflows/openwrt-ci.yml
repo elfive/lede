@@ -47,8 +47,10 @@ jobs:
 
       - name: Add 3rdParty Packages
         run: |
-          mkdir -p ./package/lean/luci-app-serverchan
+          mkdir ./package/lean/luci-app-serverchan
           git clone https://github.com/tty228/luci-app-serverchan.git ./package/lean/luci-app-serverchan
+          mkdir ./package/lean/luci-app-eqos
+          git clone https://github.com/garypang13/luci-app-eqos ./package/lean/luci-app-eqos
 
       - name: Update feeds
         run: |
@@ -137,6 +139,8 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-cifs-mount=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-cifsd=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ddns=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-app-eqos=y' >> .config
+          echo 'CONFIG_PACKAGE_luci-i18n-eqos-zh_Hans=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-https-dns-proxy=y' >> .config
           echo 'CONFIG_DEFAULT_luci-app-ipsec-vpnd=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-minidlna=y' >> .config
