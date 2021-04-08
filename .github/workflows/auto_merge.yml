@@ -47,3 +47,4 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ./tmp/message
+        if-no-files-found: ignore
